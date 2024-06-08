@@ -1840,6 +1840,8 @@ form label {
 .js .animate-box {
   opacity: 0;
 }
+
+
 .icon img {
   width: 80%;
   filter: brightness(0) invert(1);
