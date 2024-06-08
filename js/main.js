@@ -87,7 +87,7 @@
 		$('.animate-box').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this.element).hasClass('animated-fast') ) {
-				debugger;
+		
 				i++;
 
 				$(this.element).addClass('item-animate');
@@ -226,8 +226,26 @@
 	var parallax = function() {
 		$(window).stellar();
 	};
-
 	
+
+	var setupModalImage = function() {
+		// Get the modal
+		var modal = $('#myModal');
+		var closeBtn = $('#myModal .close');
+		$(".timeline-badge").click(function() {
+			$("#img01").attr("src", $(this).attr("src-image"));
+			modal.show();
+		});
+		$("#fh5co-gallery-list li a").click(function() {
+			$("#img01").attr("src", $(this).attr("src-image"));
+			modal.show();
+		});
+		closeBtn.click(function() {
+			modal.hide();
+		});
+
+	}
+
 	$(function(){
 		mobileMenuOutsideClick();
 		parallax();
@@ -241,6 +259,7 @@
 		counter();
 		counterWayPoint();
 		scrollToForm();
+		setupModalImage();
 	});
 
 
