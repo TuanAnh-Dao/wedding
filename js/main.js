@@ -263,31 +263,27 @@
 
 		form.on('submit', function (e) {
 			
-				debugger;
+				
 				e.preventDefault();
-				btn.disabled = true;
-				btn.innerHTML = "Loading...";
-	
+	            btn.button("loading");
 				
 				fetch(scriptURL, {
 					method: "POST",
 					mode: "cors", // no-cors, *cors, same-origin
 					headers: {
-						"Content-Type": "application/json",
+						"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
 					},
 
-					body: JSON.stringify(getFormData(form)),
+					body: form.serialize(),
 					})
 					.then((response) => {
-						console.log(response);
-						btn.disabled = false;
-						btn.innerHTML = "Submit";
-						alert("Success!", response);
+						form[0].reset();
+						btn.button("reset");
+						$(".information .success").show();
 					})
 					.catch((error) => {
-						btn.disabled = false;
-						btn.innerHTML = "Submit";
-						alert("Error!", error.message);
+						btn.button("reset");
+						$(".information .error").show();
 					});
 						
 					})
