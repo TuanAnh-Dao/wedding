@@ -257,7 +257,7 @@
 	}
 	var initForm = function () {
 		const scriptURL =
-		"https://script.google.com/macros/s/AKfycbwb3jSdjBTqgJo1I23WtJM8bAE3K8XQq5Aou58fip4e0bzpotMYPpBq0agyaon3t3IA/exec";
+		"https://script.google.com/macros/s/AKfycbwim8w7i3yOqd8TFvUhgltWLWaCABkW9HB2jFN6V5dm7qQANUEqmFcJ55ksKD_F5hMO/exec";
 		const form = $("#form");
 		const btn = $("#submit");
 
@@ -269,7 +269,8 @@
 				btn.innerHTML = "Loading...";
 	
 				
-				fetch(scriptURL, { method: "POST", body:  getFormData(form) })
+				fetch(scriptURL, { method: "POST", 
+				body: getFormData(form)})
 					.then((response) => {
 						console.log(response);
 					btn.disabled = false;
