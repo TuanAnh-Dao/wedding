@@ -257,7 +257,7 @@
 	}
 	var initForm = function () {
 		const scriptURL =
-		"https://script.google.com/macros/s/AKfycbwim8w7i3yOqd8TFvUhgltWLWaCABkW9HB2jFN6V5dm7qQANUEqmFcJ55ksKD_F5hMO/exec";
+		"https://script.google.com/macros/s/AKfycbzgIvYX159CZq2hm0faPyEe16Tr9a1oNeS-S6qtWSegYGfNBxfcvI-IyDckikEn9ZOm/exec";
 		const form = $("#form");
 		const btn = $("#submit");
 
