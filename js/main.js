@@ -269,30 +269,28 @@
 				btn.innerHTML = "Loading...";
 	
 				
-				fetch(scriptURL, { method: "POST", 
-				 mode: "cors", // no-cors, *cors, same-origin
-					cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-					credentials: "omit", // include, *same-origin, omit
+				fetch(scriptURL, {
+					method: "POST",
+					mode: "cors", // no-cors, *cors, same-origin
 					headers: {
-					"Content-Type": "application/json",
-					// 'Content-Type': 'application/x-www-form-urlencoded',
+						"Content-Type": "application/json",
 					},
-					redirect: "follow", // manual, *follow, error
-					referrerPolicy: "no-referrer",
-				body: JSON.stringify(getFormData(form))})
+
+					body: JSON.stringify(getFormData(form)),
+					})
 					.then((response) => {
 						console.log(response);
-					btn.disabled = false;
-					btn.innerHTML = "Submit";
-					alert("Success!", response);
+						btn.disabled = false;
+						btn.innerHTML = "Submit";
+						alert("Success!", response);
 					})
 					.catch((error) => {
-					btn.disabled = false;
-					btn.innerHTML = "Submit";
-					alert("Error!", error.message);
+						btn.disabled = false;
+						btn.innerHTML = "Submit";
+						alert("Error!", error.message);
 					});
-			
-		})
+						
+					})
 
 		
 		
