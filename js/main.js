@@ -245,6 +245,52 @@
 		});
 
 	}
+	var getFormData = function(form){
+		var unindexed_array = form.serializeArray();
+		var indexed_array = {};
+		var formData = new FormData();
+		$.map(unindexed_array, function(n, i){
+			formData.append([n['name']] , n['value']);
+		});
+		
+		return formData;
+	}
+	var initForm = function () {
+		const scriptURL =
+		"https://script.google.com/macros/s/AKfycbwb3jSdjBTqgJo1I23WtJM8bAE3K8XQq5Aou58fip4e0bzpotMYPpBq0agyaon3t3IA/exec";
+		const form = $("#form");
+		const btn = $("#submit");
+
+		form.on('submit', function (e) {
+			
+				debugger;
+				e.preventDefault();
+				btn.disabled = true;
+				btn.innerHTML = "Loading...";
+	
+				
+				fetch(scriptURL, { method: "POST", body:  getFormData(form) })
+					.then((response) => {
+						console.log(response);
+					btn.disabled = false;
+					btn.innerHTML = "Submit";
+					alert("Success!", response);
+					})
+					.catch((error) => {
+					btn.disabled = false;
+					btn.innerHTML = "Submit";
+					alert("Error!", error.message);
+					});
+			
+		})
+
+		
+		
+		
+	};
+	
+
+	
 
 	$(function(){
 		mobileMenuOutsideClick();
@@ -260,6 +306,7 @@
 		counterWayPoint();
 		scrollToForm();
 		setupModalImage();
+		initForm();
 	});
 
 
