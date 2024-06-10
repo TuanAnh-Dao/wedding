@@ -299,7 +299,7 @@
 	$(function(){
 		mobileMenuOutsideClick();
 		parallax();
-		offcanvasMenu();
+		
 		burgerMenu();
 		contentWayPoint();
 		dropdown();
