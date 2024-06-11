@@ -295,7 +295,8 @@
 
 	$(function(){
 		contentWayPoint();
-		
+		offcanvasMenu();
+		burgerMenu();
 		testimonialCarousel();
 		goToTop();
 		loaderPage();
