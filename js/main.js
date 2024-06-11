@@ -111,7 +111,7 @@
 						},  k * 100, 'easeInOutExpo' );
 					});
 					
-				}, 100);
+				}, 200);
 				
 			}
 
@@ -222,10 +222,7 @@
 		}
 	};
 
-	// Parallax
-	var parallax = function() {
-		$(window).stellar();
-	};
+
 	
 
 	var setupModalImage = function() {
@@ -297,13 +294,9 @@
 	
 
 	$(function(){
-		mobileMenuOutsideClick();
-		parallax();
-		
-		burgerMenu();
 		contentWayPoint();
-		dropdown();
-		testimonialCarousel();
+		
+		// testimonialCarousel();
 		goToTop();
 		loaderPage();
 		counter();
