@@ -296,7 +296,7 @@
 	$(function(){
 		contentWayPoint();
 		
-		// testimonialCarousel();
+		testimonialCarousel();
 		goToTop();
 		loaderPage();
 		counter();
